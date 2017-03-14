@@ -1,0 +1,4 @@
+/**
+ * 
+ */
+var board=new Array();var timerun=0;var score=0;var t;$(function(){init()});function init(){for(var i=0;i<4;i++){board[i]=new Array();for(var j=0;j<3;j++){var grid=$("#grid-"+i+"-"+j);grid.css("top",getPosTop(i,j));grid.css("left",getPosLeft(i,j));$("#box_container").append($("<div class='block' id='block-"+i+"-"+j+"'></div>"));var block=$("#block-"+i+"-"+j);block.css("top",getPosTop(i,j));block.css("left",getPosLeft(i,j));board[i][j]=0}}for(var i=0;i<4;i++){var randy=parseInt(Math.floor(Math.random()*3));if(i>0&&board[i-1][randy]==1){randy=parseInt(Math.floor(Math.random()*3))}var block=$("#block-"+i+"-"+randy);block.css("background-color","#000");board[i][randy]=1}$("#block-3-0").text("按J开始");$("#block-3-1").text("按K开始");$("#block-3-2").text("按L开始")}function getPosTop(i,j){return i*100}function getPosLeft(i,j){return j*100};
